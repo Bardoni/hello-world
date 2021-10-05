@@ -1,13 +1,11 @@
 package cuentasBancarias;
 
-public class CuentaSueldo {
+public class CuentaSueldo extends CuentaBase{
 
-	private int saldo;
+	
 
-	public int depositar(int monto) {
-		setSaldo(getSaldo() + monto);
-		return getSaldo();
-
+	public CuentaSueldo() {
+		super();
 	}
 
 	public int extraer(int monto) {
@@ -17,14 +15,6 @@ public class CuentaSueldo {
 		}
 		return getSaldo();
 
-	}
-
-	public int getSaldo() {
-		return saldo;
-	}
-
-	public void setSaldo(int saldo) {
-		this.saldo = saldo;
 	}
 
 }
