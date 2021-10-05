@@ -1,10 +1,32 @@
 package cuentasBancarias;
 
 public abstract class CuentaBase {
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + saldo;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CuentaBase other = (CuentaBase) obj;
+		if (saldo != other.saldo)
+			return false;
+		return true;
+	}
+
 	private int saldo;
 
 	public int depositar(int monto) {
-		setSaldo(getSaldo() + monto);
+		saldo += monto;
 		return getSaldo();
 
 	}
@@ -20,8 +42,7 @@ public abstract class CuentaBase {
 	}
 
 	public CuentaBase() {
-this.saldo = 0;
-}
-	
-	
+		this.saldo = 0;
+	}
+
 }

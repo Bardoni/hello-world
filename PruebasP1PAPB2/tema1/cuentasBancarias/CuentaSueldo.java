@@ -1,8 +1,6 @@
 package cuentasBancarias;
 
-public class CuentaSueldo extends CuentaBase{
-
-	
+public class CuentaSueldo extends CuentaBase {
 
 	public CuentaSueldo() {
 		super();
@@ -10,7 +8,7 @@ public class CuentaSueldo extends CuentaBase{
 
 	public int extraer(int monto) {
 		if (getSaldo() >= monto) {
-			setSaldo(-monto);
+			setSaldo(getSaldo() - monto);
 
 		}
 		return getSaldo();
